@@ -1,0 +1,62 @@
+{
+  "id": "EMG_OBS_001",
+  "disease_name": "Ectopic Pregnancy",
+  "category": "Reproductive",
+  "severity": "Highly Critical",
+  "description": "Ectopic pregnancy occurs when a fertilized egg implants outside the uterus, most commonly in a fallopian tube, and can lead to life-threatening internal bleeding if rupture occurs.",
+  "key_symptoms": [
+    "pelvic pain",
+    "light vaginal bleeding",
+    "missed period",
+    "breast tenderness",
+    "nausea",
+    "shoulder pain",
+    "urge to have bowel movement"
+  ],
+  "red_flags": [
+    "severe abdominal or pelvic pain with vaginal bleeding",
+    "fainting",
+    "extreme lightheadedness",
+    "signs of shock",
+    "suspected tubal rupture"
+  ],
+  "common_causes": [
+    "damaged fallopian tube",
+    "tubal inflammation",
+    "hormonal imbalance",
+    "abnormal fertilized egg development"
+  ],
+  "risk_factors": [
+    "previous ectopic pregnancy",
+    "sexually transmitted infections",
+    "pelvic inflammatory disease",
+    "fertility treatments such as IVF",
+    "tubal surgery",
+    "pregnancy with IUD in place",
+    "tubal ligation history",
+    "cigarette smoking"
+  ],
+  "triage_priority": "Very High Risk (within 10-30 Minutes)",
+  "actions": [
+    "perform urgent pregnancy test",
+    "obtain transvaginal ultrasound",
+    "assess hemodynamic stability",
+    "establish IV access",
+    "prepare for emergency surgical evaluation if unstable",
+    "monitor for signs of internal bleeding",
+    "urgent obstetric/gynecologic consultation"
+  ],
+  "complications": [
+    "fallopian tube rupture",
+    "severe internal bleeding",
+    "hemorrhagic shock",
+    "infertility",
+    "maternal death"
+  ],
+  "noise_keywords_to_ignore": [
+    "normal early pregnancy symptoms only",
+    "mild menstrual cramps",
+    "remote history of ectopic pregnancy without current symptoms"
+  ],
+  "source": "Mayo Clinic"
+}

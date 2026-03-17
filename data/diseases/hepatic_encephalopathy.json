@@ -1,0 +1,66 @@
+{
+  "id": "EMG_HEP_002",
+  "disease_name": "Hepatic Encephalopathy",
+  "category": "Liver",
+  "severity": "Critical",
+  "description": "A serious brain dysfunction caused by the liver's inability to remove toxins such as ammonia from the blood, leading to confusion, altered consciousness, and potentially coma.",
+  "key_symptoms": [
+    "confusion",
+    "difficulty concentrating",
+    "memory problems",
+    "daytime sleepiness",
+    "personality changes",
+    "slurred speech",
+    "flapping tremor"
+  ],
+  "red_flags": [
+    "severe confusion",
+    "inability to wake",
+    "coma",
+    "marked behavior changes",
+    "rapid mental decline"
+  ],
+  "common_causes": [
+    "cirrhosis",
+    "acute liver failure",
+    "gastrointestinal bleeding",
+    "infection",
+    "electrolyte imbalance",
+    "constipation",
+    "dehydration",
+    "sedative medications"
+  ],
+  "risk_factors": [
+    "advanced liver disease",
+    "alcohol use",
+    "older age",
+    "diabetes",
+    "kidney disease",
+    "low sodium levels",
+    "high ammonia levels",
+    "history of hepatic encephalopathy"
+  ],
+  "triage_priority": "Urgent",
+  "actions": [
+    "assess airway breathing circulation",
+    "check mental status",
+    "measure ammonia and electrolytes",
+    "identify precipitating cause",
+    "start lactulose if indicated",
+    "prepare for hospital admission"
+  ],
+  "complications": [
+    "coma",
+    "falls and injuries",
+    "permanent cognitive impairment",
+    "recurrent hospitalizations",
+    "death"
+  ],
+  "keywords": [
+    "hepatic encephalopathy",
+    "ammonia brain",
+    "cirrhosis confusion",
+    "liver failure confusion",
+    "flapping tremor confusion"
+  ]
+}

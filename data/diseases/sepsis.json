@@ -1,1 +1,70 @@
-
+{
+  "id": "EMG_MED_001",
+  "disease_name": "Sepsis",
+  "category": "Infectious",
+  "severity": "Serious",
+  "description": "Sepsis is a life-threatening condition caused by the body's extreme response to an infection, leading to organ dysfunction and possible septic shock.",
+  "key_symptoms": [
+    "altered mental status",
+    "fast shallow breathing",
+    "unexplained sweating",
+    "lightheadedness",
+    "shivering",
+    "extreme confusion",
+    "difficulty staying awake"
+  ],
+  "red_flags": [
+    "confusion or altered consciousness",
+    "rapid breathing",
+    "very low blood pressure",
+    "extreme drowsiness",
+    "signs of infection not improving"
+  ],
+  "common_causes": [
+    "bacterial infections",
+    "viral infections",
+    "fungal infections",
+    "pneumonia",
+    "urinary tract infection",
+    "abdominal infection",
+    "bloodstream infection",
+    "infected wounds or burns",
+    "catheter-related infection"
+  ],
+  "risk_factors": [
+    "age over 65",
+    "infancy",
+    "weakened immune system",
+    "cancer treatment",
+    "HIV infection",
+    "diabetes",
+    "chronic kidney disease",
+    "COPD",
+    "recent ICU stay",
+    "indwelling catheters",
+    "recent antibiotic use",
+    "corticosteroid therapy"
+  ],
+  "triage_priority": "Very High Risk (within 10-30 Minutes)",
+  "actions": [
+    "activate emergency response",
+    "administer oxygen",
+    "start IV access",
+    "begin broad-spectrum antibiotics per protocol",
+    "monitor blood pressure and urine output",
+    "prepare for rapid fluid resuscitation"
+  ],
+  "complications": [
+    "septic shock",
+    "multi-organ failure",
+    "abnormal blood clotting",
+    "tissue damage",
+    "death"
+  ],
+  "noise_keywords_to_ignore": [
+    "old dental procedures",
+    "minor past infections",
+    "resolved childhood illnesses"
+  ],
+  "source": "Mayo Clinic"
+}

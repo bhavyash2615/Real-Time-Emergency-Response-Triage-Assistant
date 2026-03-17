@@ -1,0 +1,66 @@
+{
+  "id": "EMG_HEP_001",
+  "disease_name": "Acute Liver Failure",
+  "category": "Liver",
+  "severity": "Highly Critical",
+  "description": "Rapid loss of liver function occurring over days to weeks in a person without prior liver disease, often due to toxins, drugs, or viral hepatitis.",
+  "key_symptoms": [
+    "jaundice",
+    "upper right abdominal pain",
+    "nausea and vomiting",
+    "fatigue",
+    "confusion",
+    "sleepiness",
+    "abdominal swelling"
+  ],
+  "red_flags": [
+    "altered mental status",
+    "severe confusion",
+    "bleeding tendency",
+    "seizures",
+    "coma",
+    "rapid jaundice progression"
+  ],
+  "common_causes": [
+    "acetaminophen overdose",
+    "viral hepatitis",
+    "drug induced liver injury",
+    "toxin exposure",
+    "autoimmune hepatitis",
+    "metabolic disorders",
+    "sepsis or shock"
+  ],
+  "risk_factors": [
+    "acetaminophen overuse",
+    "viral hepatitis infection",
+    "female sex",
+    "use of hepatotoxic drugs",
+    "autoimmune disease",
+    "toxin exposure",
+    "pregnancy related liver disease"
+  ],
+  "triage_priority": "Very High Risk (within 10-30 Minutes)",
+  "actions": [
+    "assess airway breathing circulation",
+    "check mental status for encephalopathy",
+    "obtain urgent liver function tests",
+    "monitor coagulation profile",
+    "prepare for ICU admission",
+    "evaluate for liver transplant"
+  ],
+  "complications": [
+    "cerebral edema",
+    "severe bleeding",
+    "infection",
+    "kidney failure",
+    "coma",
+    "death"
+  ],
+  "keywords": [
+    "acute liver failure",
+    "fulminant hepatic failure",
+    "sudden jaundice confusion",
+    "rapid liver failure",
+    "toxic liver injury"
+  ]
+}

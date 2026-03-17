@@ -1,1 +1,71 @@
-
+{
+  "id": "NEU_STROKE_003",
+  "disease_name": "Stroke",
+  "category": "Neurological",
+  "severity": "Highly Critical",
+  "description": "A stroke occurs when blood supply to part of the brain is blocked or when a blood vessel in the brain ruptures, leading to brain cell death within minutes.",
+  "key_symptoms": [
+    "sudden trouble speaking",
+    "slurred speech",
+    "confusion",
+    "face drooping",
+    "arm weakness",
+    "leg weakness",
+    "one sided numbness",
+    "sudden vision problems",
+    "sudden severe headache",
+    "trouble walking",
+    "loss of balance",
+    "loss of coordination"
+  ],
+  "other_symptoms": [
+    "blurred vision",
+    "double vision",
+    "dizziness",
+    "vomiting",
+    "change in consciousness",
+    "fainting"
+  ],
+  "red_flags": [
+    "face drooping on one side",
+    "arm weakness or drift",
+    "slurred or abnormal speech",
+    "sudden confusion with neurological deficit",
+    "sudden severe headache with neurological symptoms",
+    "sudden loss of vision",
+    "suspected FAST positive stroke signs"
+  ],
+  "risk_factors": [
+    "high blood pressure",
+    "smoking",
+    "high cholesterol",
+    "diabetes",
+    "obesity",
+    "physical inactivity",
+    "heavy alcohol use",
+    "illicit drug use",
+    "cardiovascular disease",
+    "atrial fibrillation",
+    "obstructive sleep apnea",
+    "family history of stroke",
+    "previous stroke or transient ischemic attack",
+    "older age",
+    "male sex"
+  ],
+  "actions": [
+    "call emergency services immediately",
+    "note the time symptoms started",
+    "keep the person safe and lying on their side if unconscious",
+    "do not give food or drink",
+    "monitor breathing and start CPR if unresponsive and not breathing"
+  ],
+  "triage_priority": "Immediate",
+  "common_tests": [
+    "CT scan of the brain",
+    "MRI of the brain",
+    "electrocardiogram",
+    "carotid ultrasound",
+    "blood tests"
+  ],
+  "source": "Mayo Clinic"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "EMG_CARD_004",
+  "disease_name": "Ventricular Tachycardia",
+  "category": "Cardiovascular",
+  "severity": "Fatal",
+  "description": "Ventricular tachycardia is a fast, abnormal heart rhythm originating in the ventricles that can reduce cardiac output and may lead to sudden cardiac arrest if sustained.",
+  "key_symptoms": [
+    "rapid heartbeat",
+    "palpitations",
+    "chest pain",
+    "shortness of breath",
+    "dizziness",
+    "lightheadedness"
+  ],
+  "red_flags": [
+    "fainting",
+    "loss of consciousness",
+    "sustained rapid heart rate",
+    "cardiac arrest",
+    "chest pain lasting more than a few minutes",
+    "severe breathing difficulty"
+  ],
+  "common_causes": [
+    "prior heart attack",
+    "structural heart disease",
+    "coronary artery disease",
+    "long QT syndrome",
+    "electrolyte imbalance",
+    "medication side effects",
+    "stimulant drug use",
+    "idiopathic causes"
+  ],
+  "risk_factors": [
+    "heart disease",
+    "history of myocardial infarction",
+    "electrolyte abnormalities",
+    "family history of arrhythmia",
+    "stimulant drug use",
+    "certain cardiac medications"
+  ],
+  "triage_priority": "Immediate",
+  "actions": [
+    "assess airway, breathing, and circulation",
+    "obtain ECG immediately",
+    "provide oxygen if hypoxic",
+    "prepare for synchronized cardioversion if unstable",
+    "administer antiarrhythmic medications as indicated",
+    "activate emergency cardiac response"
+  ],
+  "complications": [
+    "ventricular fibrillation",
+    "sudden cardiac arrest",
+    "heart failure",
+    "recurrent syncope",
+    "sudden death"
+  ],
+  "noise_keywords_to_ignore": [
+    "brief anxiety-related palpitations",
+    "isolated premature beats",
+    "remote history of mild tachycardia"
+  ],
+  "source": "Mayo Clinic"
+}

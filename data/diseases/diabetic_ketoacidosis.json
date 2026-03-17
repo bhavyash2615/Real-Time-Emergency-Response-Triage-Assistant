@@ -1,0 +1,71 @@
+{
+  "id": "EMG_END_001",
+  "disease_name": "Diabetic Ketoacidosis",
+  "category": "Endocrine",
+  "severity": "Critical",
+  "description": "Diabetic ketoacidosis (DKA) is a life-threatening complication of diabetes caused by severe insulin deficiency leading to hyperglycemia, ketosis, and metabolic acidosis.",
+  "key_symptoms": [
+    "excessive thirst",
+    "frequent urination",
+    "nausea",
+    "vomiting",
+    "abdominal pain",
+    "fatigue",
+    "shortness of breath",
+    "fruity breath odor",
+    "confusion"
+  ],
+  "red_flags": [
+    "blood glucose above 300 mg/dL",
+    "moderate or high urine ketones",
+    "persistent vomiting",
+    "deep or labored breathing",
+    "altered mental status",
+    "signs of dehydration",
+    "loss of consciousness"
+  ],
+  "common_causes": [
+    "insulin deficiency",
+    "missed insulin doses",
+    "infection",
+    "acute illness"
+  ],
+  "risk_factors": [
+    "type 1 diabetes",
+    "poor insulin adherence",
+    "insulin pump failure",
+    "recent infection",
+    "myocardial infarction",
+    "stroke",
+    "pancreatitis",
+    "pregnancy",
+    "corticosteroid use",
+    "cocaine use"
+  ],
+  "triage_priority": "Very High Risk (within 10-30 Minutes)",
+  "actions": [
+    "check capillary blood glucose",
+    "test blood or urine ketones",
+    "assess hydration and mental status",
+    "establish IV access",
+    "begin isotonic fluid resuscitation",
+    "initiate insulin therapy per protocol",
+    "monitor electrolytes especially potassium",
+    "treat underlying trigger such as infection",
+    "urgent hospital admission"
+  ],
+  "complications": [
+    "severe dehydration",
+    "hypokalemia",
+    "hypoglycemia during treatment",
+    "cerebral edema",
+    "coma",
+    "death"
+  ],
+  "noise_keywords_to_ignore": [
+    "well controlled diabetes without symptoms",
+    "isolated mild hyperglycemia",
+    "trace urine ketones without symptoms"
+  ],
+  "source": "Mayo Clinic"
+}

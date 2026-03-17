@@ -1,1 +1,62 @@
-
+{
+  "id": "CARD_SCA_001",
+  "disease_name": "Sudden Cardiac Arrest",
+  "category": "Cardiovascular",
+  "severity": "Fatal",
+  "description": "Sudden cardiac arrest is the sudden loss of heart activity due to an abnormal heart rhythm, causing breathing to stop and loss of consciousness.",
+  "key_symptoms": [
+    "sudden collapse",
+    "no pulse",
+    "no breathing",
+    "loss of consciousness"
+  ],
+  "other_symptoms": [
+    "chest discomfort",
+    "shortness of breath",
+    "weakness",
+    "palpitations",
+    "rapid heartbeat",
+    "irregular heartbeat"
+  ],
+  "red_flags": [
+    "person is unconscious and not breathing",
+    "absence of pulse",
+    "sudden collapse with unresponsiveness"
+  ],
+  "risk_factors": [
+    "coronary artery disease",
+    "previous heart attack",
+    "cardiomyopathy",
+    "heart valve disease",
+    "congenital heart defect",
+    "long QT syndrome",
+    "family history of heart disease",
+    "smoking",
+    "high blood pressure",
+    "high cholesterol",
+    "obesity",
+    "diabetes",
+    "inactive lifestyle",
+    "illicit drug use",
+    "low potassium",
+    "low magnesium",
+    "obstructive sleep apnea",
+    "chronic kidney disease",
+    "older age",
+    "male sex"
+  ],
+  "actions": [
+    "call emergency services immediately",
+    "start CPR with hard and fast chest compressions",
+    "use an automated external defibrillator if available",
+    "continue CPR until emergency help arrives"
+  ],
+  "triage_priority": "Immediate",
+  "common_tests": [
+    "electrocardiogram",
+    "cardiac monitoring",
+    "blood tests",
+    "coronary angiography"
+  ],
+  "source": "Mayo Clinic"
+}

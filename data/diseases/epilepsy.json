@@ -1,0 +1,57 @@
+{
+  "id": "NEU_EPILEP_005",
+  "disease_name": "Epilepsy (Seizure Disorder)",
+  "category": "Neurological",
+  "severity": "Serious",
+  "description": "Epilepsy is a neurological condition characterized by recurrent unprovoked seizures caused by abnormal electrical activity in the brain.",
+  "key_symptoms": [
+    "recurrent seizures",
+    "convulsions",
+    "jerking movements",
+    "loss of consciousness",
+    "staring spells",
+    "stiff muscles"
+  ],
+  "other_symptoms": [
+    "short term confusion",
+    "sudden fear or anxiety",
+    "deja vu sensation",
+    "aura before seizure",
+    "temporary unresponsiveness",
+    "repetitive movements",
+    "hallucinations",
+    "dizziness"
+  ],
+  "red_flags": [
+    "seizure lasting more than five minutes",
+    "repeated seizures without recovery",
+    "breathing does not return after seizure",
+    "first time seizure",
+    "injury during seizure",
+    "seizure in person with diabetes or pregnancy"
+  ],
+  "risk_factors": [
+    "prior brain injury",
+    "brain infection",
+    "stroke history",
+    "brain tumor",
+    "genetic predisposition",
+    "developmental disorders",
+    "family history of epilepsy"
+  ],
+  "actions": [
+    "protect the person from injury",
+    "place the person on their side after convulsions stop",
+    "do not restrain movements",
+    "do not place anything in the mouth",
+    "call emergency services if seizure lasts more than five minutes"
+  ],
+  "triage_priority": "Urgent (Within 1 Hour)",
+  "common_tests": [
+    "electroencephalogram",
+    "brain MRI",
+    "brain CT scan",
+    "blood tests"
+  ],
+  "source": "Mayo Clinic"
+}

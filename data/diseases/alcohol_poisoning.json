@@ -1,0 +1,69 @@
+{
+  "id": "EMG_TOX_001",
+  "disease_name": "Alcohol Poisoning",
+  "category": "Toxicological",
+  "severity": "Critical",
+  "description": "Alcohol poisoning is a life-threatening condition caused by rapid or excessive intake of ethanol or other toxic alcohols, leading to central nervous system and respiratory depression.",
+  "key_symptoms": [
+    "confusion",
+    "vomiting",
+    "seizures",
+    "slow breathing",
+    "irregular breathing",
+    "blue or pale skin",
+    "low body temperature",
+    "difficulty staying conscious"
+  ],
+  "red_flags": [
+    "unconsciousness",
+    "breathing fewer than eight breaths per minute",
+    "gaps greater than 10 seconds between breaths",
+    "repeated vomiting with reduced consciousness",
+    "seizures after alcohol intake",
+    "suspected ingestion of toxic alcohol"
+  ],
+  "common_causes": [
+    "binge drinking",
+    "rapid consumption of large alcohol amounts",
+    "ingestion of mouthwash or household alcohol products",
+    "isopropyl alcohol ingestion",
+    "methanol ingestion",
+    "ethylene glycol ingestion"
+  ],
+  "risk_factors": [
+    "binge drinking behavior",
+    "low body weight",
+    "drinking on an empty stomach",
+    "concurrent drug use",
+    "use of alcohol-containing household products",
+    "young age or inexperience with alcohol",
+    "medical conditions affecting alcohol metabolism"
+  ],
+  "triage_priority": "Urgent (Within 1 Hour)",
+  "actions": [
+    "call emergency services immediately",
+    "assess airway, breathing, and circulation",
+    "place patient in recovery position if unconscious",
+    "monitor respiratory rate and oxygen saturation",
+    "administer oxygen if needed",
+    "prepare for advanced airway management",
+    "transport urgently to emergency department"
+  ],
+  "complications": [
+    "respiratory failure",
+    "aspiration and choking",
+    "severe dehydration",
+    "seizures",
+    "hypothermia",
+    "cardiac arrest",
+    "brain damage",
+    "death"
+  ],
+  "noise_keywords_to_ignore": [
+    "mild intoxication",
+    "social drinking",
+    "hangover symptoms",
+    "remote past alcohol use"
+  ],
+  "source": "Mayo Clinic"
+}

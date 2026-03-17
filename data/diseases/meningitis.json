@@ -1,0 +1,61 @@
+{
+  "id": "EMG_NEU_001",
+  "disease_name": "Meningitis",
+  "category": "Neurological",
+  "severity": "Critical",
+  "description": "Inflammation of the meninges around the brain and spinal cord, most often caused by infection. Requires urgent evaluation.",
+  "key_symptoms": [
+    "sudden high fever",
+    "stiff neck",
+    "severe headache",
+    "nausea or vomiting",
+    "confusion",
+    "seizures",
+    "sleepiness or difficulty waking",
+    "sensitivity to light",
+    "skin rash (sometimes)"
+  ],
+  "red_flags": [
+    "stiff neck with fever",
+    "confusion or altered consciousness",
+    "seizures",
+    "persistent vomiting",
+    "difficulty waking",
+    "bulging fontanel in infants"
+  ],
+  "common_causes": [
+    "viral infection",
+    "bacterial infection",
+    "fungal infection",
+    "parasitic infection"
+  ],
+  "risk_factors": [
+    "lack of vaccination",
+    "age under 5 or under 20",
+    "weakened immune system",
+    "living in crowded settings",
+    "pregnancy"
+  ],
+  "triage_priority": "Urgent (Within 1 Hour)",
+  "actions": [
+    "treat as medical emergency",
+    "initiate urgent medical evaluation",
+    "start empiric antibiotics if bacterial suspected",
+    "isolate if meningococcal suspected",
+    "monitor airway and consciousness"
+  ],
+  "complications": [
+    "brain damage",
+    "hearing loss",
+    "seizures",
+    "shock",
+    "death"
+  ],
+  "keywords": [
+    "meningitis",
+    "stiff neck fever",
+    "brain infection",
+    "meningeal inflammation",
+    "photophobia with fever"
+  ]
+}

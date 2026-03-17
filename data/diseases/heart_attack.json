@@ -1,0 +1,67 @@
+{
+  "id": "CARD_MI_002",
+  "disease_name": "Heart Attack (Myocardial Infarction)",
+  "category": "Cardiovascular",
+  "severity": "Highly Critical",
+  "description": "A heart attack occurs when blood flow to part of the heart muscle is severely reduced or blocked, usually due to plaque buildup and clot formation in the coronary arteries.",
+  "key_symptoms": [
+    "chest pain",
+    "chest pressure",
+    "chest tightness",
+    "shortness of breath",
+    "pain spreading to arm",
+    "pain spreading to jaw",
+    "pain spreading to neck"
+  ],
+  "other_symptoms": [
+    "cold sweat",
+    "fatigue",
+    "nausea",
+    "lightheadedness",
+    "dizziness",
+    "heartburn",
+    "indigestion",
+    "back pain",
+    "upper abdominal discomfort"
+  ],
+  "red_flags": [
+    "persistent chest pain lasting more than a few minutes",
+    "chest pain that spreads to arm jaw or back",
+    "sudden shortness of breath with chest discomfort",
+    "loss of consciousness",
+    "suspected heart attack symptoms"
+  ],
+  "risk_factors": [
+    "coronary artery disease",
+    "smoking",
+    "high blood pressure",
+    "high cholesterol",
+    "obesity",
+    "diabetes",
+    "metabolic syndrome",
+    "family history of heart attack",
+    "physical inactivity",
+    "unhealthy diet",
+    "chronic stress",
+    "illicit drug use",
+    "older age",
+    "male sex",
+    "history of preeclampsia",
+    "autoimmune disease"
+  ],
+  "actions": [
+    "call emergency services immediately",
+    "chew aspirin if recommended and not allergic",
+    "take prescribed nitroglycerin if available",
+    "keep the person calm and seated",
+    "start CPR if the person becomes unconscious and not breathing"
+  ],
+  "triage_priority": "Very High Risk (within 10-30 Minutes)",
+  "common_tests": [
+    "electrocardiogram",
+    "troponin blood test",
+    "coronary angiography",
+    "cardiac CT scan"
+  ],
+  "source": "Mayo Clinic"
+}

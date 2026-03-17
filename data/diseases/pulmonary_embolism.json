@@ -1,0 +1,66 @@
+{
+  "id": "EMG_CARD_003",
+  "disease_name": "Pulmonary Embolism",
+  "category": "Respiratory",
+  "severity": "Critical",
+  "description": "A pulmonary embolism is a blockage in a lung artery usually caused by a blood clot that travels from the leg (DVT). It can be life-threatening without prompt treatment.",
+  "key_symptoms": [
+    "sudden shortness of breath",
+    "sharp chest pain worse with breathing",
+    "fainting (syncope)",
+    "rapid or irregular heartbeat",
+    "cough with bloody mucus",
+    "leg pain or swelling",
+    "dizziness",
+    "excessive sweating",
+    "cyanosis"
+  ],
+  "red_flags": [
+    "unexplained shortness of breath",
+    "chest pain resembling heart attack",
+    "fainting",
+    "bloody cough",
+    "signs of DVT (leg swelling/pain)"
+  ],
+  "common_causes": [
+    "deep vein thrombosis (DVT)",
+    "prolonged immobility",
+    "recent surgery",
+    "fat embolism",
+    "air embolism",
+    "tumor fragments"
+  ],
+  "risk_factors": [
+    "history of blood clots",
+    "heart disease",
+    "cancer",
+    "recent surgery",
+    "clotting disorders",
+    "COVID-19 infection",
+    "prolonged bed rest",
+    "long-distance travel",
+    "smoking",
+    "obesity",
+    "estrogen therapy",
+    "pregnancy"
+  ],
+  "triage_priority": "Immediate",
+  "actions": [
+    "seek emergency medical care immediately",
+    "administer oxygen if available",
+    "monitor vital signs",
+    "prepare for anticoagulation therapy per protocol"
+  ],
+  "complications": [
+    "pulmonary hypertension",
+    "lung tissue damage (pulmonary infarction)",
+    "right heart strain",
+    "death if untreated"
+  ],
+  "noise_keywords_to_ignore": [
+    "dental history",
+    "old minor injuries",
+    "non-related chronic conditions"
+  ],
+  "source": "Mayo Clinic"
+}

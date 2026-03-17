@@ -1,0 +1,80 @@
+{
+  "id": "EMG_END_002",
+  "disease_name": "Hypoglycemia",
+  "category": "Endocrine",
+  "severity": "Highly Critical",
+  "description": "Hypoglycemia is a condition in which blood glucose levels fall below the normal range, depriving the body and brain of their primary energy source and potentially causing severe neurological symptoms.",
+  "key_symptoms": [
+    "pale skin",
+    "shakiness",
+    "sweating",
+    "headache",
+    "hunger or nausea",
+    "rapid or irregular heartbeat",
+    "fatigue",
+    "irritability or anxiety",
+    "difficulty concentrating",
+    "dizziness or lightheadedness",
+    "tingling of lips or tongue",
+    "confusion",
+    "blurred vision",
+    "loss of coordination",
+    "slurred speech"
+  ],
+  "red_flags": [
+    "loss of consciousness",
+    "seizures",
+    "severe confusion",
+    "unresponsiveness",
+    "hypoglycemia not improving after sugar intake"
+  ],
+  "common_causes": [
+    "excess insulin",
+    "diabetes medications",
+    "skipping meals",
+    "excessive exercise",
+    "heavy alcohol intake without food",
+    "severe liver disease",
+    "kidney disease",
+    "severe infection",
+    "insulinoma",
+    "hormone deficiencies",
+    "malnutrition or starvation",
+    "post-bariatric surgery reactive hypoglycemia"
+  ],
+  "risk_factors": [
+    "diabetes mellitus",
+    "insulin therapy",
+    "oral hypoglycemic drugs",
+    "chronic kidney disease",
+    "chronic liver disease",
+    "alcohol misuse",
+    "advanced age",
+    "history of recurrent hypoglycemia",
+    "hypoglycemia unawareness"
+  ],
+  "triage_priority": "Very High Risk (within 10-30 Minutes)",
+  "actions": [
+    "check blood glucose immediately",
+    "administer fast-acting carbohydrates if conscious",
+    "give IV dextrose if unconscious",
+    "administer glucagon if IV access unavailable",
+    "monitor airway and vital signs",
+    "identify and treat underlying cause"
+  ],
+  "complications": [
+    "seizures",
+    "coma",
+    "brain injury",
+    "falls and trauma",
+    "death",
+    "hypoglycemia unawareness"
+  ],
+  "noise_keywords_to_ignore": [
+    "mild hunger",
+    "routine fatigue",
+    "dieting without symptoms",
+    "old resolved low sugar episode"
+  ],
+  "source": "Mayo Clinic"
+}

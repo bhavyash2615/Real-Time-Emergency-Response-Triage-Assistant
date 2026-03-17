@@ -1,1 +1,58 @@
-
+{
+  "id": "IMM_ANAPH_004",
+  "disease_name": "Anaphylaxis",
+  "category": "Respiratory & Allergic Emergency",
+  "severity": "Fatal",
+  "description": "Anaphylaxis is a severe, life-threatening allergic reaction that occurs rapidly after exposure to an allergen and can cause airway obstruction and shock.",
+  "key_symptoms": [
+    "difficulty breathing",
+    "airway swelling",
+    "swollen throat",
+    "wheezing",
+    "low blood pressure",
+    "rapid weak pulse",
+    "loss of consciousness"
+  ],
+  "other_symptoms": [
+    "hives",
+    "itching",
+    "flushed skin",
+    "pale skin",
+    "nausea",
+    "vomiting",
+    "diarrhea",
+    "dizziness",
+    "fainting"
+  ],
+  "red_flags": [
+    "sudden breathing difficulty after allergen exposure",
+    "throat or tongue swelling",
+    "signs of shock with allergic reaction",
+    "rapid drop in blood pressure",
+    "collapse after exposure to allergen"
+  ],
+  "risk_factors": [
+    "previous anaphylaxis",
+    "food allergies",
+    "drug allergies",
+    "insect sting allergy",
+    "latex allergy",
+    "asthma",
+    "mastocytosis",
+    "heart disease"
+  ],
+  "actions": [
+    "inject epinephrine immediately if available",
+    "call emergency services immediately",
+    "lay the person flat and elevate legs if possible",
+    "avoid giving food or drink",
+    "repeat epinephrine if symptoms persist and trained to do so"
+  ],
+  "triage_priority": "Immediate",
+  "common_tests": [
+    "clinical diagnosis",
+    "serum tryptase test",
+    "allergy testing"
+  ],
+  "source": "Mayo Clinic"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "IMM_ASTH_005",
+  "name": "Asthma Attack",
+  "category": "Respiratory",
+  "severity": "Serious",
+  "description": "A sudden worsening of asthma symptoms caused by airway narrowing, inflammation, and mucus buildup leading to breathing difficulty.",
+
+  "key_symptoms": [
+    "Shortness of breath",
+    "Chest tightness or pain",
+    "Coughing",
+    "Wheezing"
+  ],
+
+  "red_flags": [
+    "Gasping for breath",
+    "Difficulty speaking due to breathlessness",
+    "Severe chest muscle strain while breathing",
+    "Peak flow below 50% of personal best",
+    "Symptoms not improving after rescue inhaler"
+  ],
+
+  "common_causes": [
+    "Allergic reactions to pollen, dust mites, mold, pets",
+    "Respiratory infections such as cold or flu",
+    "Tobacco smoke exposure",
+    "Cold dry air",
+    "Exercise",
+    "Air pollution or chemical irritants",
+    "Certain medications such as aspirin or NSAIDs",
+    "Gastroesophageal reflux disease (GERD)"
+  ],
+
+  "risk_factors": [
+    "Poorly controlled asthma",
+    "Exposure to environmental triggers",
+    "Not taking daily controller medication",
+    "Incorrect inhaler technique",
+    "Depression or anxiety",
+    "Coexisting chronic illnesses"
+  ],
+  "triage_priority": "Very High Risk (within 10-30 Minutes)",
+  "actions": [
+    "Use quick-relief inhaler as prescribed",
+    "Follow asthma action plan zones",
+    "Check peak flow if available",
+    "Seek emergency care if severe symptoms occur",
+    "Continue prescribed controller medications"
+  ],
+
+  "complications": [
+    "Frequent emergency visits",
+    "Interrupted sleep",
+    "Limited physical activity",
+    "Missed work or school",
+    "Life-threatening respiratory failure"
+  ],
+
+  "keywords": [
+    "asthma exacerbation",
+    "asthma flare",
+    "wheezing attack",
+    "breathing difficulty asthma",
+    "acute asthma"
+  ]
+}

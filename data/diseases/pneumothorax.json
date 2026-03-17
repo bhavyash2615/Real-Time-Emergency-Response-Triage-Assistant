@@ -1,0 +1,57 @@
+{
+  "id": "EMG_RESP_001",
+  "disease_name": "Pneumothorax",
+  "category": "Respiratory",
+  "severity": "Critical",
+  "description": "Collapsed lung caused by air entering the space between the lung and chest wall, leading to lung compression and breathing difficulty.",
+  "key_symptoms": [
+    "sudden chest pain",
+    "shortness of breath",
+    "rapid breathing",
+    "sharp chest pain with breathing",
+    "fatigue"
+  ],
+  "red_flags": [
+    "severe shortness of breath",
+    "worsening chest pain",
+    "cyanosis",
+    "rapid heart rate",
+    "respiratory distress"
+  ],
+  "common_causes": [
+    "chest injury",
+    "underlying lung disease",
+    "ruptured lung blebs",
+    "mechanical ventilation",
+    "spontaneous occurrence"
+  ],
+  "risk_factors": [
+    "smoking",
+    "male sex",
+    "tall thin body type",
+    "previous pneumothorax",
+    "chronic lung disease",
+    "genetic predisposition"
+  ],
+  "triage_priority": "Immediate",
+  "actions": [
+    "assess airway and breathing immediately",
+    "administer oxygen",
+    "prepare for needle decompression if tension suspected",
+    "arrange urgent chest imaging",
+    "insert chest tube if indicated"
+  ],
+  "complications": [
+    "tension pneumothorax",
+    "respiratory failure",
+    "recurrent pneumothorax",
+    "cardiovascular collapse"
+  ],
+  "keywords": [
+    "pneumothorax",
+    "collapsed lung",
+    "sudden chest pain breathlessness",
+    "air in pleural space",
+    "lung collapse"
+  ]
+}

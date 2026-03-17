@@ -1,0 +1,70 @@
+{
+  "id": "EMG_NEU_002",
+  "disease_name": "Encephalitis",
+  "category": "Neurological",
+  "severity": "Critical",
+  "description": "Encephalitis is inflammation of the brain most commonly caused by viral infection or autoimmune processes, leading to neurological dysfunction that can be life-threatening.",
+  "key_symptoms": [
+    "fever",
+    "headache",
+    "confusion",
+    "personality changes",
+    "seizures",
+    "stiff neck",
+    "muscle weakness",
+    "irregular movements",
+    "trouble speaking",
+    "loss of consciousness"
+  ],
+  "red_flags": [
+    "altered mental status",
+    "new onset seizures",
+    "loss of consciousness",
+    "severe headache with fever",
+    "neurological deficits",
+    "coma",
+    "rapid neurological deterioration"
+  ],
+  "common_causes": [
+    "viral infections",
+    "herpes simplex virus",
+    "mosquito borne viruses",
+    "tick borne viruses",
+    "autoimmune reaction"
+  ],
+  "risk_factors": [
+    "young children",
+    "older adults",
+    "weakened immune system",
+    "HIV infection",
+    "immunosuppressive therapy",
+    "autoimmune disease",
+    "exposure to mosquitoes or ticks",
+    "smoking associated malignancy"
+  ],
+  "triage_priority": "Urgent (Within 1 Hour)",
+  "actions": [
+    "assess airway breathing circulation",
+    "check vital signs and neurological status",
+    "obtain urgent neuroimaging",
+    "perform lumbar puncture if indicated",
+    "start empiric antiviral therapy",
+    "manage seizures if present",
+    "admit to hospital urgently",
+    "consult neurology and infectious disease"
+  ],
+  "complications": [
+    "brain damage",
+    "persistent neurological deficits",
+    "memory impairment",
+    "personality changes",
+    "coma",
+    "death"
+  ],
+  "noise_keywords_to_ignore": [
+    "simple viral fever without neurological signs",
+    "isolated mild headache",
+    "chronic stable neurological symptoms"
+  ],
+  "source": "Mayo Clinic"
+}
