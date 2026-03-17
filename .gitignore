@@ -3,3 +3,6 @@
 
 #Mimic dataset
 data/patients
+
+# Config file
+app/config.py 
