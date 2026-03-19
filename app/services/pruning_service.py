@@ -14,6 +14,7 @@ class PruningService:
 
         # # cache embeddings to avoid recomputing
         # self.embedding_cache = {}
+        self.query_cache = {}
 
 
     def prune_history(self, patient_history, current_issue):
@@ -21,25 +22,79 @@ class PruningService:
         if patient_history is None:
             return None
 
-        query_embedding = self._embed(current_issue)
+        if current_issue in self.query_cache:
+            query_embedding = self.query_cache[current_issue]
+        else:
+            query_embedding = self._embed(current_issue)
+            self.query_cache[current_issue] = query_embedding
 
-        diagnoses = patient_history.get("diagnoses", [])[-20:]
-        medications = patient_history.get("medications", [])[-20:]
-        labs = patient_history.get("labs", [])[-20:]
-        procedures = patient_history.get("procedures", [])[-20:]
+        diagnoses = self._keyword_filter(
+            patient_history.get("diagnoses", []),
+            current_issue,
+            max_keep=5
+        )[-10:]
+
+        medications = self._keyword_filter(
+            patient_history.get("medications", []),
+            current_issue,
+            max_keep=7
+        )[-10:]
+
+        labs = self._keyword_filter(
+            patient_history.get("labs", []),
+            current_issue,
+            max_keep=3
+        )[-10:]
+
+        procedures = self._keyword_filter(
+            patient_history.get("procedures", []),
+            current_issue,
+            max_keep=5
+        )[-10:]
+
+        if len(medications) < 3:
+            medications = patient_history.get("medications", [])[-3:]
+
+        # -------- QUICK KEYWORD CHECK --------
+        all_filtered = diagnoses + medications + labs + procedures
+
+        query_words = set(current_issue.lower().split())
+
+        match_count = 0
+
+        for r in all_filtered:
+            text = str(r).lower()
+            for word in query_words:
+                if word in text:
+                    match_count += 1
+                    break
+
+        # if enough matches → skip embedding
+        if match_count >= 5:
+            return {
+                "patient_id": patient_history["patient_id"],
+                "age": patient_history.get("age"),
+                "gender": patient_history.get("gender"),
+                "relevant_diagnoses": diagnoses,
+                "relevant_medications": medications,
+                "relevant_labs": labs,
+                "relevant_procedures": procedures,
+                "recent_admissions": patient_history.get("admissions", [])[-2:]
+            }
 
         total_records = len(diagnoses) + len(medications) + len(labs) + len(procedures)
+
         if total_records <= self.top_k * 4:
             return patient_history
 
         # ---- combine everything for single embedding call ----
         all_records = diagnoses + medications + labs + procedures
 
-        if not all_records:
+        if len(all_records) > 25:
+            all_records = all_records[-25:]
+
+        if not all_records or len(all_records) <= self.top_k:
             return patient_history
-        
-        if len(all_records) > 80:
-            all_records = all_records[-80:]
 
         texts = [r if isinstance(r, str) else json.dumps(r) for r in all_records]
 
@@ -67,6 +122,32 @@ class PruningService:
         }
 
         return pruned_history
+    
+    def _keyword_filter(self, records, query, max_keep=15):
+
+        if not records:
+            return []
+
+        query_words = set(query.lower().split())
+
+        scored = []
+
+        for r in records:
+            text = str(r).lower()
+            score = sum(1 for word in query_words if word in text)
+            scored.append((score, r))
+
+        scored.sort(reverse=True, key=lambda x: x[0])
+
+        top = [r[1] for r in scored[:max_keep]]
+
+        # fallback to recent if needed
+        if len(top) < 5:
+            needed = 5 - len(top)
+            top += records[-needed:]
+
+        return top
+    
 
 
     def _filter_with_embeddings(self, records, embeddings, query_embedding):
@@ -80,24 +161,27 @@ class PruningService:
         query_vec = np.array(query_embedding)
         record_vecs = np.array(embeddings)
 
-        query_norm = np.linalg.norm(query_vec)
-        record_norms = np.linalg.norm(record_vecs, axis=1)
-
-        similarities = np.dot(record_vecs, query_vec) / (record_norms * query_norm)
+        similarities = np.dot(record_vecs, query_vec)
 
         top_indices = np.argpartition(similarities, -self.top_k)[-self.top_k:]
         top_indices = top_indices[np.argsort(similarities[top_indices])[::-1]]
 
-        return [records[i] for i in top_indices]
+        result = [records[i] for i in top_indices]
+    
+        # ✅ ensure minimum output
+        if len(result) < 3 and len(records) >= 3:
+            result = records[:3]
+
+        return result
 
 
     def _embed(self, text):
 
         # ---- batch embedding directly ----
-        if hasattr(self.embedder, "embed"):
-            return self.embedder.embed(text)
+        if isinstance(text, list):
+            return self.embedder.embed_batch(text)
         else:
-            return self.embedder.model.encode(text)
+            return self.embedder.embed_text(text)
 
         # if text in self.embedding_cache:
         #     return self.embedding_cache[text]
