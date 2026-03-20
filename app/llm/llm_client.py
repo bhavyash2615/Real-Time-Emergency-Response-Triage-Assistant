@@ -1,4 +1,5 @@
 import time
+import concurrent.futures
 from google import genai
 from openai import OpenAI
 
@@ -11,85 +12,84 @@ from app.config import (
 
 # ---------------- CLIENTS ----------------
 
-# Gemini client (Primary)
-gemini_client = genai.Client(api_key=GEMINI_API_KEY)
-
-# Groq client (Backup)
+# Groq client (Primary)
 groq_client = OpenAI(
     api_key=GROQ_API_KEY,
     base_url="https://api.groq.com/openai/v1",
     timeout=3,
 )
 
+# Gemini client (Backup)
+gemini_client = genai.Client(api_key=GEMINI_API_KEY)
 
-def generate_triage(patient_history: str, current_emergency: str) -> dict:
-    """
-    Calls primary LLM (Gemini).
-    If failure occurs → retry once → fallback to Groq.
-    """
+
+# ---------------- RESPONSE NORMALIZER ----------------
+
+def extract_text(response, provider: str) -> str:
+    if provider == "groq":
+        return response.choices[0].message.content
+    elif provider == "gemini":
+        return response.text
+    return ""
+
+
+def generate_triage(context: str) -> dict:
+
+    if len(context) > 400:
+        context = context[:400]
 
     prompt = f"""
-You are an emergency medical triage assistant supporting healthcare professionals.
+{context}
 
-Patient Current Emergency:
-{current_emergency}
+Explain in 3 short sentences why symptoms match the condition.
 
-Relevant Patient History:
-{patient_history}
-
-Instructions:
-1. Identify the most likely medical condition.
-2. Assign a triage urgency level (LOW, MEDIUM, HIGH, CRITICAL).
-3. Recommend immediate next actions.
-4. Mention which parts of the history influenced your decision.
-5. If uncertain, say so clearly.
-
-Respond in structured format.
 """
 
-    # ---------------- PRIMARY MODEL (Gemini) ----------------
+    def call_groq_with_timeout():
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            future = executor.submit(
+                lambda: groq_client.chat.completions.create(
+                    model=PRIMARY_LLM_MODEL,
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=0.2
+                )
+            )
+            return future.result(timeout=2.5)
+
+    # ---------------- PRIMARY TRY ----------------
     try:
-
-        response = gemini_client.models.generate_content(
-            model=PRIMARY_LLM_MODEL,
-            contents=prompt
-        )
-
-        return {
-            "recommendation": response.text
-        }
+        response = call_groq_with_timeout()
+        return {"recommendation": extract_text(response, "groq")}
 
     except Exception as e:
+        print("Groq failed:", e)
 
-        print("Gemini failed:", e)
+    # ---------------- RETRY ----------------
+    try:
+        print("Retrying Groq in 0.2s...")
+        time.sleep(0.2)
 
-        # ---------------- RETRY ----------------
-        try:
+        response = call_groq_with_timeout()
+        return {"recommendation": extract_text(response, "groq")}
 
-            print("Retrying Gemini in 1 second...")
-            time.sleep(1)
+    except Exception as e2:
+        print("Retry failed. Switching to Gemini:", e2)
 
-            response = gemini_client.models.generate_content(
-                model=PRIMARY_LLM_MODEL,
-                contents=prompt
-            )
-
-            return {
-                "recommendation": response.text
+    # ---------------- BACKUP ----------------
+    try:
+        response = gemini_client.models.generate_content(
+            model=BACKUP_LLM_MODEL,
+            contents=prompt,
+            generation_config={
+                "max_output_tokens": 50,
+                "temperature": 0.2,
+                "top_p": 0.8,
+                "stop_sequences": ["\n\n"]
             }
+        )
 
-        except Exception as e2:
+        return {"recommendation": extract_text(response, "gemini")}
 
-            print("Retry failed. Switching to Groq backup:", e2)
-
-            # ---------------- BACKUP MODEL (Groq) ----------------
-
-            response = groq_client.chat.completions.create(
-                model=BACKUP_LLM_MODEL,
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0.2
-            )
-
-            return {
-                "recommendation": response.choices[0].message.content
-            }
+    except Exception as e3:
+        print("Gemini also failed:", e3)
+        return {"recommendation": "Service temporarily unavailable."}
