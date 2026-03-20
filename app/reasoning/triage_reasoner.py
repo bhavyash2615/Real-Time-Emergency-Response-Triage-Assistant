@@ -159,49 +159,20 @@ class TriageReasoner:
         print("Loaded actions count:", len(protocol_data.get("actions", [])))
 
         # Patient history context
-        diagnoses = clean_list(pruned_history.get("relevant_diagnoses", []))
-        medications = clean_list(pruned_history.get("relevant_medications", []))
+        diagnoses = clean_list(pruned_history.get("relevant_diagnoses", []))[:3]
+        medications = clean_list(pruned_history.get("relevant_medications", []))[:3]
 
-        history_text = f"""
-Diagnoses: {diagnoses}
-Medications: {medications}
-"""
-
-        # Protocol summary
-        protocol_summary = f"""
-Condition: {protocol_data.get("disease_name", top_protocol.get("disease"))}
-Triage Level: {triage_level}
-Actions: {actions}
-Next Steps: {next_steps}
-"""
         
-        combined_context = f"""
-You are a medical triage assistant.
-
-Protocol for the suspected condition:
-{protocol_summary}
-
-Patient medical history:
-{history_text}
-
-Based on the protocol and the patient history:
-
-1. Confirm the most likely condition.
-2. Explain briefly why the symptoms match the condition.
-3. Highlight any risk factors from the patient's history.
-4. Recommend the immediate actions.
-
-Keep the reasoning concise (4–6 sentences).
-Do not repeat the full protocol text.
-Focus only on the medical reasoning.
-"""
+        context = (
+            f"{protocol_data.get('disease_name')} | "
+            f"{current_issue} | "
+            f"{', '.join(diagnoses[:2])} | "
+            f"{', '.join(medications[:1])}"
+        )
 
         # LLM reasoning step
         llm_start = time.time()
-        llm_result = generate_triage(
-            patient_history=combined_context,
-            current_emergency=current_issue
-        )
+        llm_result = generate_triage(context)
         llm_time = round((time.time() - llm_start) * 1000, 2)
 
 
