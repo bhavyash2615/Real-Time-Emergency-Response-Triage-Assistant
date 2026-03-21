@@ -51,6 +51,14 @@
     "monitor vital signs",
     "prepare for anticoagulation therapy per protocol"
   ],
+
+  "common_tests": [
+  "D-dimer",
+  "CT pulmonary angiography",
+  "ECG",
+  "Arterial blood gas"
+  ], 
+  
   "complications": [
     "pulmonary hypertension",
     "lung tissue damage (pulmonary infarction)",

@@ -46,6 +46,13 @@
     "monitor for signs of internal bleeding",
     "urgent obstetric/gynecologic consultation"
   ],
+
+  "common_tests": [
+  "Urine pregnancy test",
+  "Serum beta-hCG",
+  "Transvaginal ultrasound",
+  "Complete blood count"
+  ], 
   "complications": [
     "fallopian tube rupture",
     "severe internal bleeding",

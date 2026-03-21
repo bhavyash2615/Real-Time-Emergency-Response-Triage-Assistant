@@ -41,6 +41,14 @@
     "arrange urgent chest imaging",
     "insert chest tube if indicated"
   ],
+
+  "common_tests": [
+  "Chest X-ray",
+  "Ultrasound chest",
+  "CT scan (if unclear)",
+  "Pulse oximetry"
+  ], 
+  
   "complications": [
     "tension pneumothorax",
     "respiratory failure",

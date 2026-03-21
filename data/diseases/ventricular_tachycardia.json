@@ -47,6 +47,14 @@
     "administer antiarrhythmic medications as indicated",
     "activate emergency cardiac response"
   ],
+
+  "common_tests": [
+  "ECG",
+  "Electrolytes",
+  "Cardiac enzymes",
+  "Echocardiography"
+  ], 
+  
   "complications": [
     "ventricular fibrillation",
     "sudden cardiac arrest",

@@ -44,6 +44,14 @@
     "isolate if meningococcal suspected",
     "monitor airway and consciousness"
   ],
+
+  "common_tests": [
+  "Lumbar puncture (CSF analysis)",
+  "Blood cultures",
+  "Complete blood count",
+  "CT scan (before LP if indicated)"
+  ], 
+  
   "complications": [
     "brain damage",
     "hearing loss",

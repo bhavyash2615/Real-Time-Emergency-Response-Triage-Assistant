@@ -62,6 +62,14 @@
     "monitor airway and vital signs",
     "identify and treat underlying cause"
   ],
+
+  "common_tests": [
+  "Blood glucose",
+  "Serum insulin levels",
+  "Electrolytes",
+  "Toxicology screen (if suspected)"
+  ],
+  
   "complications": [
     "seizures",
     "coma",

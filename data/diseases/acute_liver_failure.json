@@ -48,6 +48,14 @@
     "prepare for ICU admission",
     "evaluate for liver transplant"
   ],
+
+  "common_tests": [
+  "Pulse oximetry (SpO2)",
+  "Peak expiratory flow rate (PEFR)",
+  "Arterial blood gas (if severe)",
+  "Chest X-ray (if complications suspected)"
+  ],
+
   "complications": [
     "cerebral edema",
     "severe bleeding",

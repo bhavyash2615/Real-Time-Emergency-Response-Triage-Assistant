@@ -53,6 +53,14 @@
     "admit to hospital urgently",
     "consult neurology and infectious disease"
   ],
+
+  "common_tests": [
+  "Lumbar puncture (CSF analysis)",
+  "MRI brain",
+  "EEG",
+  "Blood cultures"
+  ], 
+  
   "complications": [
     "brain damage",
     "persistent neurological deficits",

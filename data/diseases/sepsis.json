@@ -54,6 +54,15 @@
     "monitor blood pressure and urine output",
     "prepare for rapid fluid resuscitation"
   ],
+
+  "common_tests": [
+  "Blood cultures",
+  "Serum lactate",
+  "Complete blood count",
+  "Electrolytes",
+  "Arterial blood gas"
+  ],
+  
   "complications": [
     "septic shock",
     "multi-organ failure",

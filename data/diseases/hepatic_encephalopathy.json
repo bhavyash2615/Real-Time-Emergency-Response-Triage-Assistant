@@ -49,6 +49,14 @@
     "start lactulose if indicated",
     "prepare for hospital admission"
   ],
+
+  "common_tests": [
+  "Serum ammonia",
+  "Liver function tests",
+  "Electrolytes",
+  "Arterial blood gas"
+  ],
+
   "complications": [
     "coma",
     "falls and injuries",

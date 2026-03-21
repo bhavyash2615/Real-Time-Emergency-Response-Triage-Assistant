@@ -54,6 +54,15 @@
     "treat underlying trigger such as infection",
     "urgent hospital admission"
   ],
+
+  "common_tests": [
+  "Blood glucose",
+  "Arterial blood gas",
+  "Serum ketones",
+  "Electrolytes",
+  "Urinalysis"
+  ],
+
   "complications": [
     "severe dehydration",
     "hypokalemia",
