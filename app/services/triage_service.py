@@ -109,3 +109,6 @@ class TriageService:
         print("-------------------------------------\n")
 
         return result
+
+    def get_all_patient_ids(self):
+        return self.history_retriever.get_all_patient_ids()
