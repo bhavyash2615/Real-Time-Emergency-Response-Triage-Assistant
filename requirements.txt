@@ -4,6 +4,7 @@ pandas
 faiss-cpu
 numpy
 sentence-transformers
+torch --index-url https://download.pytorch.org/whl/cpu
 pydantic
 requests
 python-dotenv
