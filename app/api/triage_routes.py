@@ -6,7 +6,13 @@ from app.services.triage_service import TriageService
 
 router = APIRouter()
 
-triage_service = TriageService()
+triage_service = None
+
+def get_triage_service():
+    global triage_service
+    if triage_service is None:
+        triage_service = TriageService()
+    return triage_service
 
 
 # -------------------------
@@ -23,7 +29,9 @@ class TriageRequest(BaseModel):
 @router.post("/triage")
 def run_triage(request: TriageRequest):
 
-    result = triage_service.run_triage(
+    service = get_triage_service()
+
+    result = service.run_triage(
         patient_id=request.patient_id,
         current_issue=request.current_issue
     )
@@ -32,4 +40,7 @@ def run_triage(request: TriageRequest):
 
 @router.get("/patients")
 def get_patients():
-    return triage_service.get_all_patient_ids()
+    service = get_triage_service()
+    return service.get_all_patient_ids()
+
+
