@@ -45,7 +45,7 @@ Provides reasoning and highlights the patient context used in generating recomme
 ## 📦 Installation & Setup
 1. Clone the repository:<br>
 git clone https://github.com/your-username/Real-Time-Emergency-Response-Triage-Assistant.git<br>
-cd real-time-emergency-response-triage-assistant
+cd Real-Time-Emergency-Response-Triage-Assistant
 2. Create and activate a virtual environment:<br>
 python -m venv venv<br>
 source venv/bin/activate<br>   # On Windows: venv\Scripts\activate
