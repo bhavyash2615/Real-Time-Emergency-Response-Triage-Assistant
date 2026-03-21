@@ -59,6 +59,19 @@ class PatientDatabase:
             return json.loads(row[0])
 
         return None
+    
+    # -----------------------------
+    # Get all patient IDs
+    # -----------------------------
+    def get_all_patient_ids(self):
+
+        cursor = self.conn.cursor()
+
+        cursor.execute("SELECT patient_id FROM patients")
+
+        rows = cursor.fetchall()
+
+        return [row[0] for row in rows]
 
     # -----------------------------
     # Close connection
