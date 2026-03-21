@@ -50,10 +50,14 @@
             <div id="patientDropdown" class="dropdown"></div>
           </div>
 
-          <textarea 
-            id="symptoms" 
-            placeholder="Describe symptoms..."
-          ></textarea>
+          <div class="voice-input">
+            <textarea 
+              id="symptoms" 
+              placeholder="Describe symptoms..."
+            ></textarea>
+
+            <button id="micBtn" type="button" onclick="startVoice()">🎤</button>
+          </div>
 
           <button onclick="runTriage()">Run Analysis</button>
         </div>

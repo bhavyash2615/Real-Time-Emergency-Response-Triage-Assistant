@@ -267,3 +267,36 @@ function goBack() {
   document.getElementById("res-llm").innerText = "";
   document.getElementById("res-performance").innerText = "";
 }
+
+function startVoice() {
+  const micBtn = document.getElementById("micBtn");
+  const textarea = document.getElementById("symptoms");
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    alert("Voice not supported in this browser");
+    return;
+  }
+
+  const recognition = new SpeechRecognition();
+  recognition.lang = "en-IN";
+  recognition.interimResults = false;
+
+  micBtn.classList.add("listening");
+
+  recognition.start();
+
+  recognition.onresult = function(event) {
+    const transcript = event.results[0][0].transcript;
+    textarea.value += " " + transcript;
+  };
+
+  recognition.onend = function() {
+    micBtn.classList.remove("listening");
+  };
+
+  recognition.onerror = function() {
+    micBtn.classList.remove("listening");
+  };
+}

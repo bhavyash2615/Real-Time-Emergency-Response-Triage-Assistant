@@ -168,6 +168,49 @@ textarea {
   overflow-y: auto;
 }
 
+.voice-input {
+  position: relative;
+  width: 100%;
+}
+
+/* keep textarea normal but give space for mic */
+.voice-input textarea {
+  padding-right: 50px;
+}
+
+/* mic button inside textarea */
+#micBtn {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+
+  background: #38bdf8;
+  color: white;
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* hover */
+#micBtn:hover {
+  background: #0ea5e9;
+}
+
+/* when recording */
+#micBtn.listening {
+  background: #ef4444;
+}
+
 /* BUTTON */
 button {
   width: 100%;
