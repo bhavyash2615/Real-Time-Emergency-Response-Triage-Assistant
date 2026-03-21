@@ -29,3 +29,7 @@ def run_triage(request: TriageRequest):
     )
 
     return result
+
+@router.get("/patients")
+def get_patients():
+    return triage_service.get_all_patient_ids()
