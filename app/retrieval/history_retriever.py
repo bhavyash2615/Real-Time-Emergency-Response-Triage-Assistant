@@ -6,6 +6,9 @@ class HistoryRetriever:
     def __init__(self):
         self.db = PatientDatabase()
 
+    def get_all_patient_ids(self):
+        return self.db.get_all_patient_ids()
+
     def get_patient_history(self, patient_id):
         """
         Retrieve patient history from patient database
