@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Emergency Triage Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- INPUT SCREEN -->
+  <div id="inputScreen">
+
+    <!-- Header -->
+    <header class="navbar">
+      <h1 class="logo">TriageAI</h1>
+      <nav>
+        <a href="#input">Input</a>
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#how">How It Works</a>
+        <a href="#prompts">Prompts</a>
+        <a href="#faq">FAQs</a>
+      </nav>
+    </header>
+
+    <!-- Hero / Input Section -->
+    <section id="input" class="hero">
+
+      <div class="hero-container">
+
+        <!-- LEFT SIDE: Heading + Subheading -->
+        <div class="hero-text">
+          <h2>Emergency Triage Assistant</h2>
+          <p class="hero-subheading">
+            Designed for high-pressure environments, this system combines intelligent retrieval, 
+            noise reduction, and predictive models to support faster emergency decisions.
+          </p>
+        </div>
+
+        <!-- RIGHT SIDE: Input Box -->
+        <div class="glass-card">
+          <div class="autocomplete">
+            <input 
+              type="text" 
+              id="patientId" 
+              placeholder="Enter or select Patient ID"
+              autocomplete="off"
+            >
+            <div id="patientDropdown" class="dropdown"></div>
+          </div>
+
+          <textarea 
+            id="symptoms" 
+            placeholder="Describe symptoms..."
+          ></textarea>
+
+          <button onclick="runTriage()">Run Analysis</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="overview-section">
+      <h2 class="info-title">Overview</h2>
+
+      <div class="timeline">
+
+        <!-- Phase 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <h3>Phase 1: What It Does</h3>
+            <p>
+              The Real-Time Emergency Response Triage Assistant is a system designed 
+              to quickly assess emergency situations using patient history and current symptoms. 
+              It retrieves relevant medical data, filters out unnecessary information, 
+              and provides a clear recommendation on what to do next.
+            </p>
+
+            <p>
+              Instead of requiring medical staff to go through large records or protocols, 
+              the system delivers focused, actionable insights within seconds, helping 
+              prioritize care in critical situations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <h3>Phase 2: How It Achieves This</h3>
+            <p>
+              The system combines multiple techniques including data retrieval (RAG), 
+              machine learning classification, and contextual reasoning to produce 
+              accurate triage outcomes.
+            </p>
+
+            <p>
+              It analyzes patient history alongside current symptoms, removes irrelevant 
+              data through intelligent pruning, predicts possible conditions using a 
+              trained model, and then generates structured recommendations with explanations. 
+              This layered approach ensures both speed and reliability, even when working 
+              with large and noisy datasets.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="info-section" id="features">
+
+        <h2 class="info-title">Why use Triage Assistant?</h2>
+        <p class="info-subtitle">
+            Built to cut through noisy medical data and deliver precise emergency insights in real time.
+        </p>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>✂️ Intelligent Context Pruning (Noise Reduction)</h3>
+                <p>Irrelevant or outdated medical data is automatically removed to focus only on information related to the current condition. This reduces noise, improves accuracy, and significantly speeds up processing.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🧠 Machine Learning–Based Condition Classification</h3>
+                <p>A trained Support Vector Machine (SVM) model analyzes symptoms along with patient history to predict possible medical conditions. This allows for fast and reliable initial classification.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔗 Context-Aware Decision Support</h3>
+                <p>The system combines current symptoms with filtered patient history to produce more accurate results. It takes into account past diagnoses, medications, and risk factors instead of relying on symptoms alone.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>⚡ Latency-Optimized Processing Pipeline</h3>
+                <p>The entire pipeline is designed for speed, using efficient retrieval and pruning techniques to deliver results in real time while tracking performance at each step.</p>
+            </div>
+
+        </div>
+    </section>
+
+     <!-- How it works -->
+    <section class="info-section" id="how">
+        <h2 class="info-title">How it works</h2>
+        <div class="how-grid">
+            <div class="how-card">
+                <span class="how-step">1</span>
+                <h3>Input</h3>
+                <p>
+                    Enter patient ID and describe symptoms.
+                </p>
+            </div>
+
+            <div class="how-card">
+                <span class="how-step">2</span>
+                <h3>Patient History Retrieval</h3>
+                <p>
+                    The system retrieves the patient's medical history for context.
+                </p>
+            </div>
+
+            <div class="how-card">
+                <span class="how-step">3</span>
+                <h3>Noise Reduction & Context Extraction</h3>
+                <p>
+                    Extracts only: Relevant diagnoses, Medications, Risk factors
+                </p>
+            </div>
+
+            <div class="how-card">
+                <span class="how-step">4</span>
+                <h3>Disease Classification (SVM)</h3>
+                <p>
+                    Symptoms + filtered history → fed into SVM model. Predicts possible condition.
+                </p>
+            </div>
+
+            <div class="how-card">
+                <span class="how-step">5</span>
+                <h3>LLM-Based Reasoning</h3>
+                <p>
+                    Top condition + context → sent to LLM. LLM generates: Explanation
+                </p>
+            </div>
+            <div class="how-card">
+                <span class="how-step">6</span>
+                <h3>Triage Generation</h3>
+                <p>
+                    Based on the predicted condition and context, the system generates a triage recommendation.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+ 
+    <!--PROMPTS -->
+    <section class="info-section" id="prompts">
+      <h2 class="info-title">Try Sample Cases</h2>
+
+      <div class="prompt-container">
+
+        <div class="prompt-chip">
+          Patient ID: 10014729 — airway swelling and difficulty breathing
+        </div>
+
+        <div class="prompt-chip">
+          Patient ID: 10005817 — chest pain and shortness of breath
+        </div>
+
+        <div class="prompt-chip">
+          Patient ID: 10009628 — high fever with confusion
+        </div>
+
+        <div class="prompt-chip">
+          Patient ID: 10038992 — severe headache and blurred vision
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <h2 class="info-title">FAQs</h2>
+
+      <div class="faq-grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="faq-column">
+
+          <div class="faq-item">
+            <button class="faq-question">What is the purpose of this system?</button>
+            <div class="faq-answer">
+              The system assists in real-time triage decision-making by analyzing patient history and current symptoms to provide fast, accurate emergency recommendations.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How is patient history used?</button>
+            <div class="faq-answer">
+              The system retrieves the patient’s full medical history and applies intelligent filtering to retain only relevant clinical information, ensuring accurate predictions.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Why use SVM for classification?</button>
+            <div class="faq-answer">
+              Support Vector Machines are highly effective for small-to-medium datasets, high-dimensional medical data, and fast, reliable classification.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">What role does the LLM play?</button>
+            <div class="faq-answer">
+              The LLM interprets the predicted condition, provides detailed clinical reasoning, and enhances explainability of the output.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="faq-column">
+
+          <div class="faq-item">
+            <button class="faq-question">Is the system real-time?</button>
+            <div class="faq-answer">
+              Yes. The system is optimized for low-latency processing, with detailed timing metrics for each step.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Can this replace medical professionals?</button>
+            <div class="faq-answer">
+              No. This is a decision-support tool, not a replacement for clinicians. It is designed to assist healthcare providers in making faster and more informed decisions.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">What datasets are used?</button>
+            <div class="faq-answer">
+              The system uses emergency disease datasets and patient records derived from the MIMIC dataset (Kaggle).
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How reliable are the recommendations?</button>
+            <div class="faq-answer">
+              The system combines historical patient data, machine learning classification, and LLM reasoning. This multi-layered approach improves reliability, but final decisions should always involve medical professionals.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <h3 class="footer-title">© 2026 Emergency Triage Assistant</h3>
+      <p class="footer-tagline">
+          Precision Triage When Every Second Counts
+      </p>
+
+    </footer>
+
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="resultScreen" class="hidden">
+
+    <div class="result-container">
+
+      <div style="margin-bottom: 20px;">
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
+      </div>
+
+      <!-- TOP CARD -->
+      <div class="result-top-card">
+        <div>
+          <p class="label">Patient ID</p>
+          <h2 id="res-id"></h2>
+        </div>
+
+        <div>
+          <p class="label">Possible Condition</p>
+          <h1 id="res-condition"></h1>
+        </div>
+
+        <div>
+          <p class="label">Triage Level</p>
+          <span id="res-urgency" class="triage-badge"></span>
+        </div>
+
+        <div>
+          <p class="label">Latency</p>
+          <p id="res-latency"></p>
+        </div>
+      </div>
+
+      <!-- GRID -->
+      <div class="result-grid">
+
+        <!-- LEFT -->
+        <div>
+
+          <div id="actionsBox" class="result-card">
+            <h3>Recommended Actions</h3>
+            <ul id="res-actions"></ul>
+          </div>
+
+          <div id="stepsBox" class="result-card">
+            <h3>Next Steps</h3>
+            <ul id="res-steps"></ul>
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div>
+
+          <div id="historyBox" class="result-card">
+            <h3>Patient Context</h3>
+            <h4>Retrieved from Patient's History</h4>
+            <pre id="res-history"></pre>
+          </div>
+
+          <div id="performanceBox" class="result-card">
+            <h3>Performance</h3>
+            <pre id="res-performance"></pre>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- LLM -->
+      <div class="result-card full-width">
+        <h3>Clinical Reasoning (Using LLM) </h3>
+        <p id="res-llm"></p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
