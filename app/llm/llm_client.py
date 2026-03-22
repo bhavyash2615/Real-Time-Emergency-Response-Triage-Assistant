@@ -20,7 +20,8 @@ groq_client = OpenAI(
 )
 
 # Gemini client (Backup)
-gemini_client = genai.Client(api_key=GEMINI_API_KEY)
+genai.configure(api_key=GEMINI_API_KEY)
+gemini_model = genai.GenerativeModel(BACKUP_LLM_MODEL)
 
 
 # ---------------- RESPONSE NORMALIZER ----------------
@@ -29,7 +30,7 @@ def extract_text(response, provider: str) -> str:
     if provider == "groq":
         return response.choices[0].message.content
     elif provider == "gemini":
-        return response.text
+        return getattr(response, "text", "")
     return ""
 
 
@@ -77,14 +78,12 @@ Explain in 3 short sentences why symptoms match the condition.
 
     # ---------------- BACKUP ----------------
     try:
-        response = gemini_client.models.generate_content(
-            model=BACKUP_LLM_MODEL,
-            contents=prompt,
+        response = gemini_model.generate_content(
+            prompt,
             generation_config={
                 "max_output_tokens": 50,
                 "temperature": 0.2,
                 "top_p": 0.8,
-                "stop_sequences": ["\n\n"]
             }
         )
 
