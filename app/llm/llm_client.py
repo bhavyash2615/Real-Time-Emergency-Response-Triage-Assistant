@@ -1,6 +1,6 @@
 import time
 import concurrent.futures
-from google import genai
+import google.generativeai as genai
 from openai import OpenAI
 
 from app.config import (
