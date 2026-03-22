@@ -1,6 +1,6 @@
 # Real Time Emergency Response Triage Assistant
 A smart clinical triage system that analyzes patient symptoms and history to suggest possible conditions, urgency level, and recommended actions using a combination of LLM reasoning and machine learning models.<br>
-🔗 Live Demo: https://real-time-emergency-response-triage-assistant-ax42hkok1.vercel.app/ <br>
+🔗 Live Demo: [https://real-time-emergency-response-triage-assistant-ax42hkok1.vercel.app/](https://real-time-emergency-response-triage.vercel.app/) <br>
 🔗 Backend API: Hosted on Render [https://real-time-emergency-response-triage.onrender.com/docs]
 
 This documentation will guide and help you understand, set up, and use the application effectively.
