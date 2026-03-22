@@ -10,7 +10,7 @@ class PruningService:
         self.embedder = EmbeddingModel()
 
         # max items to keep per category
-        self.top_k = 5
+        self.top_k = 3
 
         # # cache embeddings to avoid recomputing
         # self.embedding_cache = {}
@@ -70,7 +70,7 @@ class PruningService:
                     break
 
         # if enough matches → skip embedding
-        if match_count >= 5:
+        if match_count >= 4:
             return {
                 "patient_id": patient_history["patient_id"],
                 "age": patient_history.get("age"),
@@ -88,15 +88,18 @@ class PruningService:
             return patient_history
 
         # ---- combine everything for single embedding call ----
-        all_records = diagnoses + medications + labs + procedures
+        # limit per category instead of global cut
+        diagnoses = diagnoses[:3]
+        medications = medications[:3]
+        labs = labs[:1]
+        procedures = procedures[:1]
 
-        if len(all_records) > 25:
-            all_records = all_records[-25:]
+        all_records = diagnoses + medications + labs + procedures
 
         if not all_records or len(all_records) <= self.top_k:
             return patient_history
 
-        texts = [r if isinstance(r, str) else json.dumps(r) for r in all_records]
+        texts = [str(r) for r in all_records]
 
         record_embeddings = self._embed(texts)
 
@@ -152,23 +155,34 @@ class PruningService:
 
     def _filter_with_embeddings(self, records, embeddings, query_embedding):
 
-        if not records:
+        # handle empty cases safely
+        if not records or embeddings is None or len(embeddings) == 0:
             return []
 
         if len(records) <= self.top_k:
             return records
 
+        # convert to numpy arrays
         query_vec = np.array(query_embedding)
         record_vecs = np.array(embeddings)
 
-        similarities = np.dot(record_vecs, query_vec)
+        # safety check for invalid shapes
+        if record_vecs.ndim != 2 or record_vecs.shape[0] == 0:
+            return records[:self.top_k]
 
+        try:
+            similarities = np.dot(record_vecs, query_vec)
+        except Exception:
+            # fallback if something goes wrong
+            return records[:self.top_k]
+
+        # get top-k indices
         top_indices = np.argpartition(similarities, -self.top_k)[-self.top_k:]
         top_indices = top_indices[np.argsort(similarities[top_indices])[::-1]]
 
         result = [records[i] for i in top_indices]
-    
-        # ✅ ensure minimum output
+
+        # ensure minimum output
         if len(result) < 3 and len(records) >= 3:
             result = records[:3]
 
@@ -177,20 +191,7 @@ class PruningService:
 
     def _embed(self, text):
 
-        # ---- batch embedding directly ----
         if isinstance(text, list):
             return self.embedder.embed_batch(text)
-        else:
-            return self.embedder.embed_text(text)
 
-        # if text in self.embedding_cache:
-        #     return self.embedding_cache[text]
-
-        # if hasattr(self.embedder, "embed"):
-        #     emb = self.embedder.embed(text)
-        # else:
-        #     emb = self.embedder.model.encode(text)
-
-        # self.embedding_cache[text] = emb
-
-        # return emb
+        return self.embedder.embed_text(text)

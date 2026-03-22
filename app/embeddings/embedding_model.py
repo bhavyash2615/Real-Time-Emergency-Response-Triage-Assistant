@@ -17,7 +17,7 @@ class EmbeddingModel:
     def embed_batch(self, texts):
         return _model.encode(
             texts,
-            batch_size=32,
+            batch_size=16,
             convert_to_numpy=True,
             normalize_embeddings=True
         )
