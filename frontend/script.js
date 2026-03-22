@@ -2,7 +2,7 @@ let patientList = [];
 
 window.addEventListener("DOMContentLoaded", async () => {
   try {
-    const res = await fetch("http://localhost:8000/patients");
+    const res = await fetch("https://real-time-emergency-response-triage.onrender.com/patients");
     patientList = await res.json();
     console.log("Loaded patients:", patientList.length);
   } catch (err) {
