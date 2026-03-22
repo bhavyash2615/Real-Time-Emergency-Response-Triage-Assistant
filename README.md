@@ -53,4 +53,4 @@ source venv/bin/activate<br>   # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 ## 🌍 Live Demo
-🔗 Live Website: [https://real-time-emergency-response-triage-assistant-ax42hkok1.vercel.app/](https://real-time-emergency-response-triage.vercel.app/)
+🔗 Live Website: https://real-time-emergency-response-triage.vercel.app/
