@@ -27,7 +27,7 @@ function runTriage() {
   // Show loading temporarily
   document.getElementById("res-condition").innerText = "Loading...";
 
-  fetch("http://localhost:8000/triage", {
+  fetch("https://real-time-emergency-response-triage.onrender.com/triage", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
