@@ -1,7 +1,13 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
+from app.services.triage_service import TriageService
+
+
 router = APIRouter()
+
+triage_service = TriageService()
+
 
 # -------------------------
 # Request schema
@@ -12,30 +18,18 @@ class TriageRequest(BaseModel):
 
 
 # -------------------------
-# Lazy service loader
-# -------------------------
-def get_triage_service():
-    from app.services.triage_service import TriageService
-    return TriageService()
-
-
-# -------------------------
 # Triage API endpoint
 # -------------------------
 @router.post("/triage")
 def run_triage(request: TriageRequest):
 
-    service = get_triage_service()
-
-    result = service.run_triage(
+    result = triage_service.run_triage(
         patient_id=request.patient_id,
         current_issue=request.current_issue
     )
 
     return result
 
-
 @router.get("/patients")
 def get_patients():
-    service = get_triage_service()
-    return service.get_all_patient_ids()
+    return triage_service.get_all_patient_ids()

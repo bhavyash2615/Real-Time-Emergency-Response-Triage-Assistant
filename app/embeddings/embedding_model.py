@@ -1,19 +1,15 @@
 from sentence_transformers import SentenceTransformer
 from app.config import EMBEDDING_MODEL
 
-_model = None   # GLOBAL CACHE
-
 
 class EmbeddingModel:
     def __init__(self):
-        pass
+        self.model = None
 
     def get_model(self):
-        global _model
-        if _model is None:
-            print("Loading embedding model...")
-            _model = SentenceTransformer(EMBEDDING_MODEL)
-        return _model
+        if self.model is None:
+            self.model = SentenceTransformer(EMBEDDING_MODEL)
+        return self.model
 
     def embed_text(self, text: str):
         model = self.get_model()
