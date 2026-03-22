@@ -2,9 +2,39 @@ let patientList = [];
 
 window.addEventListener("DOMContentLoaded", async () => {
   try {
+    const dropdown = document.getElementById("patientDropdown");
+
+    if (!dropdown) {
+      console.error("Dropdown not found");
+      return;
+    }
+
+    // 🔥 show loading immediately
+    dropdown.innerHTML = "<div>Loading patients...</div>";
+    dropdown.style.display = "block";
+
     const res = await fetch("https://real-time-emergency-response-triage.onrender.com/patients");
     patientList = await res.json();
+
+    // 🔥 populate dropdown
+    dropdown.innerHTML = "";
+
+    patientList.slice(0, 10).forEach(id => {
+      const div = document.createElement("div");
+      div.innerText = id;
+
+      div.onclick = () => {
+        document.getElementById("patientId").value = id;
+        dropdown.style.display = "none";
+      };
+
+      dropdown.appendChild(div);
+    });
+
+    dropdown.style.display = "block";
+
     console.log("Loaded patients:", patientList.length);
+
   } catch (err) {
     console.error("Error loading patients", err);
   }
