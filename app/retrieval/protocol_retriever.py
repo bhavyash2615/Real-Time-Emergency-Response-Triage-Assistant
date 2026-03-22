@@ -29,7 +29,8 @@ class ProtocolRetriever:
         if hasattr(self.embedder, "embed"):
             query_embedding = self.embedder.embed(query)
         else:
-            query_embedding = self.embedder.model.encode(query)
+            model = self.embedder.get_model()
+            query_embedding = model.encode(query)
 
         query_embedding = np.array([query_embedding]).astype("float32")
 
